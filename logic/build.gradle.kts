@@ -2,6 +2,7 @@ plugins {
     java
     jacoco
     application
+    `java-library`
 }
 
 java.toolchain {
@@ -20,6 +21,8 @@ val junitVersion = "5.10.0"
 dependencies {
     implementation("org.slf4j:slf4j-api:$slf4jVersion")
     implementation("info.picocli:picocli:$picoCliVersion")
+
+    api(project(":lib"))
 
     runtimeOnly("org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion")
 
